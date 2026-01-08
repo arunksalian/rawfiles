@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Say voice="Polly.Joanna-Generative">Thanks for trying our documentation. Enjoy!</Say>
+    <Play>https://audio-samples.github.io/samples/mp3/blizzard_unconditional/sample-0.mp3</Play>
+</Response>
