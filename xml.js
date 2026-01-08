@@ -1,0 +1,24 @@
+export default {
+  async fetch(request) {
+    // Allow POST (Twilio default) and GET (for browser testing)
+    if (request.method !== "POST" && request.method !== "GET") {
+      return new Response("Method Not Allowed", { status: 405 });
+    }
+
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Say voice="Polly.Joanna-Generative">
+    Thanks for trying our documentation. Enjoy!
+  </Say>
+  <Play>
+    https://audio-samples.github.io/samples/mp3/blizzard_unconditional/sample-0.mp3
+  </Play>
+</Response>`;
+
+    return new Response(xml, {
+      headers: {
+        "Content-Type": "text/xml; charset=UTF-8"
+      }
+    });
+  }
+};
